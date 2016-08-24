@@ -77,6 +77,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
         }
+
+        Marker marker1 = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(49.548556, 25.593890))
+                .title("Тернопіль")
+                .snippet("Файне Місто"));
+
+        Marker marker2 = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(49.056928, 25.391168))
+                .title("Бучач")
+                );
+
+        Marker marker3 = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(49.833682, 24.030628))
+                .title("Львів")
+                );
+
+        Marker marker4 = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(48.931052, 25.344549))
+                .title("Соколів")
+                );
     }
 
     protected synchronized void buildGoogleApiClient() {
@@ -120,7 +140,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
-        markerOptions.title("Current Position");
+        markerOptions.title("Ви знаходитесь тут");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
         mCurrLocationMarker = mMap.addMarker(markerOptions);
 
